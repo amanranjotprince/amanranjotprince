@@ -1,0 +1,366 @@
+<html>
+	<head>
+		<title>PROJECT</title>
+		<style>
+		*{
+		    margin:0;
+			padding:0;
+			font-family:cursive;
+        }
+		html{
+		    scroll-behavior:smooth;
+		}
+		#navbar{
+		    position:sticky;
+		}
+		#navbar::before{
+		    content:"";
+			background-color:black;
+			position:absolute;
+			z-index:-1;
+			height:100%;
+			width:100%;
+			opacity:0.4;
+		}
+		#logo{
+		    display:flex;
+			align-items:center;
+		}
+		#logo img{
+		    width:50px;
+			height:50px;
+			}
+		#navbar ul{
+			display:flex;
+		}
+		#navbar ul li{
+		    list-style:none;
+			padding:20px;
+		}
+		#navbar ul li a{
+			border-radius:10px;
+			text-decoration:none;
+			color:white;
+			padding:5px;
+		}
+		#navbar ul li a:hover{
+			color:#0d2abe;
+			background-color:white;
+		}
+		#home{
+		    display:flex;
+			flex-direction:column;
+			align-items:center;
+			justify-content:center;
+			height:500px;
+			padding:50px;
+		}
+		#home::before{
+		    content:"";
+			position:absolute;
+			background:url('https://t3.ftcdn.net/jpg/00/01/47/28/360_F_1472821_kMjcU0El8NkcU0k7zNtlVTU0Fl8W2l.jpg')no-repeat center center/cover;
+			height: 642px;
+            top:0px;
+            left:0px;
+            width: 100%;
+            z-index: -1;
+            opacity:0.50;
+		}
+		#home h1{
+		    font-size:50px;
+			color:#0d2abe;
+			text-align:center;
+		}
+		#home p{
+		    text-align:center;
+			font-size:26px;
+			color:black;
+		}
+		
+		.btn{
+            padding: 6px 20px;
+            background-color:#0d2abe;
+            color: white;
+            margin: 17px;
+            font-size: 20px;
+            border-radius: 10px;
+            cursor:pointer;
+        }
+		.btn:hover{
+	        background-color:white;
+            color:black;			
+		}
+		
+		
+		#services-container h1{
+		    color:#0d2abe;
+		}
+		#services{
+			padding:30px;
+			display:flex;
+			margin:20px;
+			}
+		#services h2{
+			color:#0d2abe;
+		}
+		#services .box{
+		    border:2px solid black;
+			padding:20px;
+			margin:3px 6px;
+			border-radius:130px 23px;
+			background-color:#cac9e7;
+		}
+		#services .box img{
+		    height:120px;
+			margin:auto;
+			display:block;
+		}
+		
+		
+		#location-section{
+		   position:relative;
+		}
+		#location-section h1{
+		   color:#0d2abe;
+		   padding:30px;
+		}
+		#location-section::before{
+            content: "";
+            position: absolute;
+            background: url('https://images.unsplash.com/photo-1532154066703-3973764c81fe?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fE1BUFN8ZW58MHx8MHx8fDA%3D')no-repeat center center/cover;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.6;
+        }
+		#location{
+		    display:flex;
+			justify-content: center;
+            align-items: center;
+			flex-wrap: wrap;
+		}
+		#location .location-item img{
+		    height:350px;
+			width:250px;
+			margin:20px;
+			border:2px solid black;
+			border-radius:100px 100px 0px 0px;
+		}
+		#location .location-item img:hover{
+		    width:255px;
+			height:355px;
+		}
+		.location-item h3{
+		    display:flex;
+			justify-content:center;
+		}
+		
+		#contact h1{
+		    color:#0d2abe;
+		}
+		#contact{
+            position: relative;
+        }
+        #contact::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.7;
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGnnMDxJ6iakIMiYi4Wmq__8EfyqWLW1qiLg&s') no-repeat center center/cover;
+        }
+        #contact-box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 34px;
+        }
+        #contact-box textarea, #contact-box input{
+            width: 100%;
+            padding: 10px;
+            border-radius: 9px;
+            font-size: 11px;
+			border:2px solid black;
+        }
+        #contact-box form{
+            width: 40%;
+        }
+        #contact-box label{
+           font-size: 25px;
+        }
+		footer{
+		    color:white;
+			background-color:black;
+		    padding:2px 8px;
+		}
+		.h-primary{
+            font-size:38px;
+            padding: 12px;
+        }
+        .h-secondary{
+            font-size:23px;
+            padding: 12px;
+        }
+        .center{
+            text-align: center;
+        }
+		.submit{
+		    color:white;
+			background-color:#5b71e4;
+			padding:9px 20px;
+			margin:17px 220px;
+			font-size:20px;
+			border-radius:10px;
+			cursor:pointer;
+		}
+		.submit:hover{
+            background-color:white;
+            color:black;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+		
+		@media screen and (max-width:1300px){
+		#logo{
+	        flex-direction:column;
+        }
+
+        #services{
+          	flex-direction:column;
+        }
+        #services .box{
+          	margin:20px 10px;
+        }
+        #clients{
+	        flex-wrap:wrap;
+        }
+        #clients img{
+	        margin:2px;
+        }
+		}
+
+		</style>
+	</head>
+	<body>
+		<nav id="navbar">
+			<div id="logo">
+				<img src="https://thumbs.dreamstime.com/b/logo-travel-agency-airplane-sky-blue-color-modern-illustration-logo-travel-agency-airplane-sky-blue-315822425.jpg" alt="logo">
+					<ul>
+						<li class="item">
+							<a href="#">Home</a></li>
+						<li class="item">
+							<a href="#services-container">Our Services</a></li>
+						<li class="item">
+							<a href="#location-section"/>Locations</a></li>
+						<li class="item">
+							<a href="#contact">Contact Us</a></li>
+					</ul>
+			</div>
+		</nav>
+		<section id="home">
+		    <h1 class="h-primary"> WELCOME!!! TO THE WORLD TOUR</h1>
+			<P class="center">Tour of the world is virtually a dream come true for any individual. It literally opens door to new cultures, lifestyle and historic places and people. Nevertheless, due to limited time and resources, as well as due to a necessity to increase the efficiency of the trip, a detailed and well througt schedule is required.</P>
+			<a href="#location-section"><button class="btn">Lets Go...</button></a>
+		</section>
+		
+		<section id="services-container">
+		
+		    <h1 class="h-primary center">Our Services</h1>
+			<div id="Services">
+			    <div class="box">
+				    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwaYZzNBFrRcjDAmpBqFpiEDMBWmFG1BwsIw&s" alt="SORRY">
+					<h2 class="h-secondary center">Best Travel Agent</h2>
+					<p class="center">A travel agent is a highly organized professional who is passionate about travel and helping others. They are focused on creating the best possible experiences, directly catered to their clients. They work with hotels, airlines and experiences that their clients will love.</p>
+				</div>
+				<div class="box">
+				    <img src="https://www.marthastewart.com/thmb/9Pa_KJYx2q7iHe8xE1VKe2MGKwo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/ms-cozy-living-room-ideas-heidi-harris-d20b6776355843cea943bafdd6a94f44.jpg" alt="SORRY">
+					<h2 class="h-secondary center">Hotel Inventory</h2>
+					<p class="center">A hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided inside a hotel room may range from a modest-quality mattress in a small room to large suites with bigger, higher-quality beds, a dresser.</p>
+				</div>
+				<div class="box">
+				    <img src="https://content3.jdmagicbox.com/v2/comp/hyderabad/z2/040pxx40.xx40.160819073203.p2z2/catalogue/fastway-worldwide-express-banjara-hills-hyderabad-courier-services-h7mqd.jpg" alt="SORRY">
+					<h2 class="h-secondary center">Fast Services</h2>
+					<p class="center">Travelling can be a fun and learning experience for everyone now. Moreover, with technology, you can travel to any corner of the world without having to worry about barriers of language, distance, and more. Everyone must travel at least once in their life to enjoy experience.</p>
+				</div>
+			</div>
+		</section>
+		
+		<section id="location-section">
+		    <h1 class="h-primary center">The world is Yours...</h1>
+			<div id="location">
+			    <div class="location-item">
+				    <h3>INDIA</h3>
+				    <img src="https://www.specialholidays.com/world/uploads/images/tours/slider/thumbs/691907_india.jpg"alt="SORRY">
+				</div>
+				<div class="location-item">
+				    <h3>FRANCE</h3>
+				    <img src="https://www.specialholidays.com/world/uploads/images/tours/slider/thumbs/348767_france-1.jpg" alt="SORRY">
+				</div>
+				<div class="location-item">
+				    <h3>DUBAI</h3>
+				    <img src="https://www.specialholidays.com/world/uploads/images/tours/slider/thumbs/8755_dubai.jpg" alt="SORRY">
+				</div>
+				<div class="location-item">
+				    <h3>INDONESIA</h3>
+				    <img src="https://www.specialholidays.com/world/uploads/images/tours/slider/thumbs/506065_indonesia.jpg" alt="SORRY">
+				</div>
+				<div class="location-item">
+				    <h3>RUSSIA</h3>
+				    <img src="https://www.specialholidays.com/world/uploads/images/tours/slider/thumbs/247419_Russia.jpg" alt="SORRY">
+				</div>
+				<div class="location-item">
+				    <h3>CANADA</h3>
+				    <img src="https://www.specialholidays.com/world/uploads/images/tours/slider/thumbs/947405_Canada.jpg" alt="SORRY">
+				</div>
+				<div class="location-item">
+				    <h3>SRI LANKA</h3>
+				    <img src="https://www.specialholidays.com/world/uploads/images/tours/slider/thumbs/63525_Sri-Lanka.JPG" alt="SORRY">
+				</div>
+				<div class="location-item">
+				    <h3>SINGAPORE</h3> 
+				    <img src="https://www.specialholidays.com/world/uploads/images/tours/slider/thumbs/963471_Singapore-small.jpg" alt="SORRY">
+				</div>
+			</div>
+		</section>
+		
+		<section id="contact">
+		<h1 class="h-primary center">Contact Us</h1>
+		<div id="contact-box">
+		    <form action="">
+			    <div class="form-group">
+				    <label for="name">Name:</label>
+					<input type="text" name="name" id="name" placeholder="Enter your name">
+				</div>
+				<div class="form-group">
+				    <label for="email">Email:</label>
+					<input type="text" name="name" id="email" placeholder="abc@gmail.com">
+				</div>
+				<div class="form-group">
+				    <label for="no">Phone No:</label>
+					<input type="no" name="name" id="no" placeholder="9876543210">
+				</div>
+				<div class="form-group">
+				    <label for="message">Message:</label>
+					<textarea name="message" id="message" cols="33" rows="3" placeholder="hi!!!"></textarea>
+				</div>
+				<div class="form-group">
+				    <a href="#navbar"><button class="submit">Submit</button></a>
+				</div>
+			</form>
+		</div>
+		</section>
+		
+		<section>
+		    <div class="ask">
+				    <label for="message">ASK ME...</label>
+					<input types="text" name="message" id="message">
+			</div>
+		</section>
+		<footer>
+		    <div class="center">
+			    copyright &copy;www.PROJECT All right reserved!!!
+			</div>
+		</footer>
+	</body>
+</html>
